@@ -1,0 +1,345 @@
+﻿@model IEnumerable<QLCCCC.Models.ChungCu>
+@using Microsoft.AspNetCore.Identity
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khám Phá Các Chung Cư - QLCCCC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            background: linear-gradient(to right, #fdf6e4, #fbe7c6);
+            font-family: 'Arial', sans-serif;
+            color: #8d5524;
+        }
+
+        .container {
+            margin-top: 30px;
+            max-width: 1300px;
+        }
+
+        .header-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .header-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 1;
+        }
+
+        .table-container {
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            padding: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+
+            .table-container:hover {
+                box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+            }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            border: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background: linear-gradient(135deg, #d35400, #c0392b);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                color: #fff;
+            }
+
+        .table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #fff;
+            border: 1px solid #f5e6cc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+            .table thead th {
+                background: linear-gradient(135deg, #f5cba8, #e67e22);
+                color: #fff;
+                font-weight: 600;
+                padding: 15px;
+                text-align: left;
+                border-bottom: 2px solid #d35400;
+            }
+
+            .table tbody td {
+                padding: 15px;
+                font-size: 1rem;
+                color: #8d5524;
+                border-bottom: 1px solid #f5e6cc;
+                background-color: #ffffff;
+                transition: background-color 0.3s ease;
+            }
+
+            .table tbody tr:last-child td {
+                border-bottom: none;
+            }
+
+            .table tbody tr:hover td {
+                background-color: #fef9f2;
+            }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-info {
+            background-color: #e67e22;
+            border-color: #e67e22;
+            color: #fff;
+        }
+
+            .btn-info:hover {
+                background-color: #d35400;
+                border-color: #d35400;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn-warning {
+            background-color: #f1c40f;
+            border-color: #f1c40f;
+            color: #fff;
+        }
+
+            .btn-warning:hover {
+                background-color: #e2b307;
+                border-color: #e2b307;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn-danger {
+            background-color: #c0392b;
+            border-color: #c0392b;
+            color: #fff;
+        }
+
+            .btn-danger:hover {
+                background-color: #e74c3c;
+                border-color: #e74c3c;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .info-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Giảm khoảng cách giữa các ô để phù hợp với 4 ô trên 1 hàng */
+            padding: 20px 0;
+        }
+
+        .col-md-4 {
+            flex: 0 0 25%; /* Thay đổi từ 33.33% thành 25% để hiển thị 4 ô trên 1 hàng */
+            max-width: 25%; /* Thay đổi từ 33.33% thành 25% */
+            display: flex;
+            justify-content: center;
+        }
+
+        .info-box {
+            position: relative;
+            width: 100%;
+            height: 280px; /* Giảm chiều cao để phù hợp với 4 ô trên 1 hàng */
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            text-decoration: none;
+            color: inherit;
+        }
+
+            .info-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+            }
+
+        .info-box-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .info-box:hover .info-box-background {
+            transform: scale(1.05);
+        }
+
+        .info-box-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px; /* Giảm padding để phù hợp với kích thước nhỏ hơn */
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            text-align: left;
+        }
+
+        .info-box h5 {
+            font-size: 1.4rem; /* Giảm kích thước chữ để phù hợp với ô nhỏ hơn */
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-box p {
+            font-size: 0.9rem; /* Giảm kích thước chữ để phù hợp với ô nhỏ hơn */
+            color: #f5f5f5;
+            margin: 3px 0; /* Giảm khoảng cách giữa các dòng */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+            .info-box p strong {
+                color: #fff;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Container cho hình ảnh và tiêu đề -->
+        <div class="header-container">
+            <img src="~/images/ChungCu.jpg" alt="Hình ảnh đầu trang Chung Cư" class="header-image" />
+            <h2 class="header-title">Khám Phá Các Chung Cư</h2>
+        </div>
+
+        @if (User.IsInRole("Ban quản lý"))
+        {
+            <div class="table-container">
+                <a asp-action="Create" class="btn btn-primary">Thêm Mới Chung Cư</a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tên</th>
+                            <th>Địa Chỉ</th>
+                            <th>Chủ Đầu Tư</th>
+                            <th>Năm Xây Dựng</th>
+                            <th>Số Tầng</th>
+                            <th>Mô Tả</th>
+                            <th>Hình Ảnh</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var chungCu in Model)
+                        {
+                            <tr>
+                                <td>@chungCu.Ten</td>
+                                <td>@chungCu.DiaChi</td>
+                                <td>@chungCu.ChuDauTu</td>
+                                <td>@chungCu.NamXayDung</td>
+                                <td>@chungCu.SoTang</td>
+                                <td>
+                                    @{
+                                        var shortMoTa = (chungCu.MoTa != null && chungCu.MoTa.Length > 100)
+                                        ? chungCu.MoTa.Substring(0, 100) + "..."
+                                        : chungCu.MoTa ?? "Không có mô tả";
+                                    }
+                                    @shortMoTa
+                                </td>
+                                <td>
+                                    @if (chungCu.HinhAnhChungCus != null && chungCu.HinhAnhChungCus.Any())
+                                    {
+                                        foreach (var hinhAnh in chungCu.HinhAnhChungCus)
+                                        {
+                                            <img src="@hinhAnh.DuongDan" alt="Hình ảnh @chungCu.Ten" style="width: 100px; height: auto;" />
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <span>Không có hình ảnh</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@chungCu.ID" class="btn btn-info btn-sm">Chi tiết</a>
+                                    <a asp-action="Edit" asp-route-id="@chungCu.ID" class="btn btn-warning btn-sm">Chỉnh sửa</a>
+                                    <a asp-action="Delete" asp-route-id="@chungCu.ID" class="btn btn-danger btn-sm">Xóa</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+
+        <!-- Các ô vuông hiển thị thông tin với hình ảnh làm nền -->
+        <div class="info-boxes">
+            @foreach (var chungCu in Model)
+            {
+                <div class="col-md-4">
+                    <a href="@Url.Action("Details", "ChungCu", new { id = chungCu.ID })" class="info-box">
+                        @if (chungCu.HinhAnhChungCus != null && chungCu.HinhAnhChungCus.Any())
+                        {
+                            <img src="@chungCu.HinhAnhChungCus.First().DuongDan" alt="Hình ảnh @chungCu.Ten" class="info-box-background" />
+                        }
+                        else
+                        {
+                            <img src="~/images/default-image.jpg" alt="Hình ảnh mặc định" class="info-box-background" />
+                        }
+                        <div class="info-box-content">
+                            <div>
+                                <h5>@chungCu.Ten</h5>
+                                <p><strong>Chủ Đầu Tư:</strong> @chungCu.ChuDauTu</p>
+                                <p><strong>Năm Xây Dựng:</strong> @chungCu.NamXayDung</p>
+                            </div>
+                            <div>
+                                <p><strong>Số Tầng:</strong> @chungCu.SoTang</p>
+                                <p><strong>Địa Chỉ:</strong> @chungCu.DiaChi</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
