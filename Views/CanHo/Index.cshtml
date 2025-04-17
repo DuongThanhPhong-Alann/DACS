@@ -1,0 +1,370 @@
+﻿@model IEnumerable<QLCCCC.Models.CanHo>
+@using Microsoft.AspNetCore.Identity
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khám Phá Các Căn Hộ - QLCCCC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            background: linear-gradient(to right, #fdf6e4, #fbe7c6);
+            font-family: 'Arial', sans-serif;
+            color: #8d5524;
+        }
+
+        .container {
+            margin-top: 30px;
+            max-width: 1300px;
+        }
+
+        .header-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .header-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 1;
+        }
+
+        .table-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.3s ease;
+        }
+
+            .table-container:hover {
+                box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+            }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            border: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background: linear-gradient(135deg, #d35400, #c0392b);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                color: #fff;
+            }
+
+        .table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #fff;
+            border: 1px solid #f5e6cc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+            .table thead th {
+                background: linear-gradient(135deg, #f5cba8, #e67e22);
+                color: #fff;
+                font-weight: 600;
+                padding: 15px;
+                text-align: left;
+                border-bottom: 2px solid #d35400;
+            }
+
+            .table tbody td {
+                padding: 15px;
+                font-size: 1rem;
+                color: #8d5524;
+                border-bottom: 1px solid #f5e6cc;
+                background-color: #ffffff;
+                transition: background-color 0.3s ease;
+            }
+
+            .table tbody tr:last-child td {
+                border-bottom: none;
+            }
+
+            .table tbody tr:hover td {
+                background-color: #fef9f2;
+            }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-info {
+            background-color: #e67e22;
+            border-color: #e67e22;
+            color: #fff;
+        }
+
+            .btn-info:hover {
+                background-color: #d35400;
+                border-color: #d35400;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn-warning {
+            background-color: #f1c40f;
+            border-color: #f1c40f;
+            color: #fff;
+        }
+
+            .btn-warning:hover {
+                background-color: #e2b307;
+                border-color: #e2b307;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn-danger {
+            background-color: #c0392b;
+            border-color: #c0392b;
+            color: #fff;
+        }
+
+            .btn-danger:hover {
+                background-color: #e74c3c;
+                border-color: #e74c3c;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .info-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .info-box {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            text-decoration: none;
+            color: inherit;
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+            .info-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+            }
+
+        .info-box-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .info-box:hover .info-box-background {
+            transform: scale(1.05);
+        }
+
+        .info-box-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            text-align: left;
+        }
+
+        .info-box h5 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-box p {
+            font-size: 1rem;
+            color: #f5f5f5;
+            margin: 5px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+            .info-box p strong {
+                color: #fff;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Container cho hình ảnh và tiêu đề -->
+        <div class="header-container">
+            <img src="~/images/CanHo.jpg" alt="Hình ảnh đầu trang Căn Hộ" class="header-image" />
+            <h2 class="header-title">Khám Phá Các Căn Hộ</h2>
+        </div>
+
+        @if (User.IsInRole("Ban quản lý"))
+        {
+            <div class="table-container">
+                <a asp-action="Create" class="btn btn-primary mb-3">Thêm Mới Căn Hộ</a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mã Căn</th>
+                            <th>Chung Cư</th>
+                            <th>Diện Tích</th>
+                            <th>Số Phòng</th>
+                            <th>Giá</th>
+                            <th>Trạng Thái</th>
+                            <th>Mô Tả</th>
+                            <th>URLs</th>
+                            <th>Hình Ảnh</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var canHo in Model)
+                        {
+                            <tr>
+                                <td>@canHo.MaCan</td>
+                                <td>@canHo.ChungCu?.Ten</td>
+                                <td>@canHo.DienTich m²</td>
+                                <td>@canHo.SoPhong</td>
+                                <td>@canHo.Gia.ToString("C0", new System.Globalization.CultureInfo("vi-VN"))</td>
+                                <td>@canHo.TrangThai</td>   
+                                <td>
+                                    @{
+                                        var moTa = canHo.MoTa ?? "Không có";
+                                        var shortMoTa = moTa.Contains("\n") || moTa.Contains("\r\n")
+                                        ? moTa.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None)[0] + "..."
+                                        : (moTa.Length > 100 ? moTa.Substring(0, 100) + "..." : moTa);
+                                    }
+                                    @shortMoTa
+                                </td>
+                                <td>
+                                    @if (canHo.URLs != null && canHo.URLs.Any())
+                                    {
+                                        var urlList = canHo.URLs.ToList();
+                                        var maxDisplayLength = 50; // Giới hạn độ dài hiển thị của mỗi URL
+                                        var maxUrlsToShow = 2; // Giới hạn số lượng URL hiển thị
+                                        var displayedUrls = urlList.Take(maxUrlsToShow).Select(url =>
+                                        {
+                                            var shortUrl = url.Contains("\n") || url.Contains("\r\n")
+                                                ? url.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None)[0] + "..."
+                                                : (url.Length > maxDisplayLength ? url.Substring(0, maxDisplayLength) + "..." : url);
+                                            return shortUrl;
+                                        }).ToList();
+
+                                        <ul>
+                                            @foreach (var url in displayedUrls)
+                                            {
+                                                <li><a href="@url" target="_blank">@url</a></li>
+                                            }
+                                        </ul>
+
+                                        @if (urlList.Count > maxUrlsToShow)
+                                        {
+                                            <span>...</span>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <span>Không có URL</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (canHo.HinhAnhCanHos?.Any() == true)
+                                    {
+                                        <img src="@canHo.HinhAnhCanHos.First().DuongDan" alt="Ảnh căn hộ" style="width: 80px; height: auto; border-radius: 5px;" />
+                                    }
+                                    else
+                                    {
+                                        <span>Không có hình ảnh</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@canHo.ID" class="btn btn-info btn-sm">Chi tiết</a>
+                                    <a asp-action="Edit" asp-route-id="@canHo.ID" class="btn btn-warning btn-sm">Sửa</a>
+                                    <a asp-action="Delete" asp-route-id="@canHo.ID" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');">Xóa</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+
+        <!-- Các ô vuông hiển thị thông tin với hình ảnh làm nền -->
+        <div class="info-boxes">
+            @foreach (var canHo in Model)
+            {
+                <a asp-action="Details" asp-route-id="@canHo.ID" class="info-box">
+                    @if (canHo.HinhAnhCanHos?.Any() == true)
+                    {
+                        <img src="@canHo.HinhAnhCanHos.First().DuongDan" alt="Hình ảnh @canHo.MaCan" class="info-box-background" />
+                    }
+                    else
+                    {
+                        <img src="~/images/default-house.jpg" alt="Hình ảnh mặc định" class="info-box-background" />
+                    }
+                    <div class="info-box-content">
+                        <div>
+                            <h5>@canHo.MaCan</h5>
+                            <p><strong>Chung Cư:</strong> @canHo.ChungCu?.Ten</p>
+                            <p><strong>Diện Tích:</strong> @canHo.DienTich m²</p>
+                        </div>
+                        <div>
+                            <p><strong>Số Phòng:</strong> @canHo.SoPhong</p>
+                            <p><strong>Giá:</strong> @canHo.Gia.ToString("C0", new System.Globalization.CultureInfo("vi-VN"))</p>
+                            <p><strong>Trạng Thái:</strong> @canHo.TrangThai</p>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
