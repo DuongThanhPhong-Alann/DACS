@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using QLCCCC.Data;
 using QLCCCC.Repositories.Interfaces;
 using QLCCCC.Repositories;
+using QLCCCC.Models;
+using QLCCCC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,9 @@ builder.Services.AddScoped<IDichVuRepository, DichVuRepository>();
 builder.Services.AddScoped<ICuDanRepository, CuDanRepository>();
 builder.Services.AddScoped<IChungCuRepository, ChungCuRepository>();
 builder.Services.AddScoped<ICanHoRepository, CanHoRepository>();
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddTransient<IEmailService, EmailService>();
+
 
 // Thêm dịch vụ MVC
 builder.Services.AddControllersWithViews();
