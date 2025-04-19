@@ -132,6 +132,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>Mã Cư Dân</th>
                         <th>Họ Tên</th>
                         <th>Số Điện Thoại</th>
                         <th>Email</th>
@@ -143,6 +144,9 @@
                     @foreach (var item in Model)
                     {
                         <tr>
+                            <td>
+                                @(item.CuDan != null ? item.CuDan.ID.ToString() : "Không phải cư dân")
+                            </td>
                             <td>@item.HoTen</td>
                             <td>@item.SoDienThoai</td>
                             <td>@item.Email</td>
