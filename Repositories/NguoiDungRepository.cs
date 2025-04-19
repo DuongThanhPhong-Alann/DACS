@@ -18,7 +18,9 @@ namespace QLCCCC.Repositories
 
         public async Task<List<NguoiDung>> GetAllAsync()
         {
-            return await _context.NguoiDungs.ToListAsync();
+            return await _context.NguoiDungs
+                .Include(nd => nd.CuDan)
+                .ToListAsync();
         }
 
         public async Task<NguoiDung?> GetByIdAsync(int id)
