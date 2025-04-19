@@ -22,5 +22,7 @@ namespace QLCCCC.Models
         public string? LoaiNguoiDung { get; set; }
 
         public CuDan? CuDan { get; set; }
+
+        
     }
 }
