@@ -7,35 +7,50 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using QLCCCC.Data;
+using QLCCCC.Repositories.Interfaces;
 
 namespace QLCCCC.Controllers
 {
     public class PhanAnhController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IEmailService _emailService;
 
-        public PhanAnhController(ApplicationDbContext context)
+        public PhanAnhController(ApplicationDbContext context, IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         // GET: PhanAnh
         public async Task<IActionResult> Index()
         {
-            var phanAnhs = await _context.PhanAnhs
-             .Include(p => p.NguoiDung)
-                 .ThenInclude(nd => nd.CuDan)
-                     .ThenInclude(cd => cd.CanHo)
-                         .ThenInclude(ch => ch.ChungCu)
-             .Include(p => p.NguoiDung)
-                 .ThenInclude(nd => nd.CuDan)
-                     .ThenInclude(cd => cd.ChungCu)
-         .ToListAsync();
+            var userIdString = User.FindFirst("UserId")?.Value;
 
+            if (string.IsNullOrEmpty(userIdString))
+                return Unauthorized();
+
+            int userId = int.Parse(userIdString);
+
+            IQueryable<PhanAnh> query = _context.PhanAnhs
+                .Include(p => p.NguoiDung)
+                    .ThenInclude(nd => nd.CuDan)
+                        .ThenInclude(cd => cd.CanHo)
+                            .ThenInclude(ch => ch.ChungCu)
+                .Include(p => p.NguoiDung)
+                    .ThenInclude(nd => nd.CuDan)
+                        .ThenInclude(cd => cd.ChungCu);
+
+            if (User.IsInRole("Cư dân"))
+            {
+                // Lọc phản ánh chỉ của người dùng hiện tại
+                query = query.Where(p => p.ID_NguoiDung == userId);
+            }
+
+            var phanAnhs = await query.ToListAsync();
 
             return View(phanAnhs);
         }
-
 
         // GET: PhanAnh/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -44,12 +59,16 @@ namespace QLCCCC.Controllers
 
             var phanAnh = await _context.PhanAnhs
                 .Include(p => p.NguoiDung)
+                    .ThenInclude(nd => nd.CuDan)
+                        .ThenInclude(cd => cd.CanHo)
+                            .ThenInclude(ch => ch.ChungCu)
                 .FirstOrDefaultAsync(m => m.ID == id);
 
             if (phanAnh == null) return NotFound();
 
             return View(phanAnh);
         }
+
 
         // GET: PhanAnh/Create
         [Authorize] // Đảm bảo người dùng đã đăng nhập
@@ -66,14 +85,16 @@ namespace QLCCCC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userId = User.FindFirst("UserId")?.Value;
-                if (string.IsNullOrEmpty(userId)) return Unauthorized();
+                var userIdStr = User.FindFirst("UserId")?.Value;
+                if (string.IsNullOrEmpty(userIdStr)) return Unauthorized();
 
-                phanAnh.ID_NguoiDung = int.Parse(userId);
+                var userId = int.Parse(userIdStr);
+
+                phanAnh.ID_NguoiDung = userId;
                 phanAnh.NgayGui = DateTime.Now;
                 phanAnh.TrangThai = TrangThaiPhanAnh.ChuaXuLy;
 
-                // Xử lý file ảnh
+                // Xử lý ảnh đính kèm
                 if (HinhAnhFile != null && HinhAnhFile.Length > 0)
                 {
                     var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "phananh");
@@ -95,11 +116,27 @@ namespace QLCCCC.Controllers
 
                 _context.Add(phanAnh);
                 await _context.SaveChangesAsync();
+
+                // Lấy email của cư dân
+                var userEmail = await _context.NguoiDungs
+                    .Where(nd => nd.ID == userId)
+                    .Select(nd => nd.Email)
+                    .FirstOrDefaultAsync();
+
+                var subject = "Có phản ánh mới từ cư dân";
+                var body = $@"
+            Cư dân <strong>{userEmail}</strong> đã gửi một phản ánh mới với nội dung:<br/><br/>
+            <em>{phanAnh.NoiDung}</em><br/><br/>
+            Vui lòng kiểm tra và xử lý.";
+
+                await _emailService.SendEmailAsync("duongthanhphong1618@gmail.com", subject, body);
+
                 return RedirectToAction(nameof(Index));
             }
 
             return View(phanAnh);
         }
+
 
 
         // GET: PhanAnh/Edit/5

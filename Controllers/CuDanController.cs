@@ -58,12 +58,36 @@ namespace QLCCCC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CuDan cuDan)
         {
-            if (!ModelState.IsValid) return View(cuDan);
+            if (!ModelState.IsValid)
+            {
+                // Load lại dropdown nếu có lỗi
+                ViewBag.ChungCuList = _context.ChungCus
+                    .Select(c => new SelectListItem { Value = c.ID.ToString(), Text = c.Ten })
+                    .ToList();
+                ViewBag.NguoiDungList = _context.NguoiDungs
+                    .Where(nd => nd.LoaiNguoiDung == "Cư dân")
+                    .Select(nd => new SelectListItem { Value = nd.ID.ToString(), Text = nd.HoTen })
+                    .ToList();
 
+                return View(cuDan);
+            }
+
+            // Thêm mới cư dân
             _context.CuDans.Add(cuDan);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); // Lưu trước để có ID của CuDan
+
+            // Cập nhật lại NguoiDung.CuDan
+            var nguoiDung = await _context.NguoiDungs.FindAsync(cuDan.ID_NguoiDung);
+            if (nguoiDung != null)
+            {
+                nguoiDung.CuDan = cuDan;
+                _context.Update(nguoiDung);
+                await _context.SaveChangesAsync();
+            }
+
             return RedirectToAction(nameof(Index));
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
@@ -133,12 +157,24 @@ namespace QLCCCC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cuDan = await _context.CuDans.FindAsync(id);
+            var cuDan = await _context.CuDans
+                .Include(cd => cd.NguoiDung)
+                .FirstOrDefaultAsync(cd => cd.ID == id);
+
             if (cuDan == null) return NotFound();
+
+            // Nếu người dùng là cư dân => cập nhật lại thành khách
+            if (cuDan.NguoiDung != null && cuDan.NguoiDung.LoaiNguoiDung == "Cư dân")
+            {
+                cuDan.NguoiDung.LoaiNguoiDung = "Khách";
+                cuDan.NguoiDung.CuDan = null; // Gỡ liên kết nếu có
+                _context.Update(cuDan.NguoiDung);
+            }
 
             _context.CuDans.Remove(cuDan);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
     }
 }
