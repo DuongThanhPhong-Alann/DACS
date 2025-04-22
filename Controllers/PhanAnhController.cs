@@ -13,13 +13,15 @@ namespace QLCCCC.Controllers
 {
     public class PhanAnhController : Controller
     {
-        private readonly ApplicationDbContext _context;
         private readonly IEmailService _emailService;
+        private readonly ApplicationDbContext _context;
+        private readonly ILogger<PhanAnhController> _logger;
 
-        public PhanAnhController(ApplicationDbContext context, IEmailService emailService)
+        public PhanAnhController(IEmailService emailService, ApplicationDbContext context, ILogger<PhanAnhController> logger)
         {
-            _context = context;
             _emailService = emailService;
+            _context = context;
+            _logger = logger;
         }
 
         // GET: PhanAnh
@@ -240,19 +242,49 @@ namespace QLCCCC.Controllers
 
         // POST: PhanAnh/Reply/5
         [HttpPost]
-        [Authorize(Roles = "Ban quản lý")] // Chỉ Ban quản lý mới được phản hồi
+        [Authorize(Roles = "Ban quản lý")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Reply(int id, string phanHoi)
         {
-            var phanAnh = await _context.PhanAnhs.FindAsync(id);
+            var phanAnh = await _context.PhanAnhs
+                .Include(p => p.NguoiDung)
+                .FirstOrDefaultAsync(p => p.ID == id);
+
             if (phanAnh == null) return NotFound();
 
             phanAnh.PhanHoi = phanHoi;
-            phanAnh.TrangThai = TrangThaiPhanAnh.HoanThanh; // Tự động cập nhật trạng thái thành "Hoàn thành"
+            phanAnh.TrangThai = TrangThaiPhanAnh.HoanThanh;
+
             _context.Update(phanAnh);
             await _context.SaveChangesAsync();
 
+            var userEmail = phanAnh.NguoiDung.Email;
+
+            if (string.IsNullOrEmpty(userEmail))
+            {
+                _logger.LogError($"Không tìm thấy email của cư dân có ID {phanAnh.ID_NguoiDung}");
+                return RedirectToAction(nameof(Index));
+            }
+
+            var subject = "Ban Quản Lý đã phản hồi về phản ánh của bạn";
+            var body = $@"
+        Xin chào <strong>{phanAnh.NguoiDung.HoTen}</strong>,<br/><br/>
+        Ban Quản Lý đã gửi phản hồi về phản ánh của bạn:<br/><br/>
+        <em>{phanHoi}</em><br/><br/>
+        Trạng thái hiện tại: <strong>{phanAnh.TrangThai}</strong>";
+
+            try
+            {
+                await _emailService.SendEmailAsync(userEmail, subject, body, "duongthanhphong1618@gmail.com");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Email sending failed: {ex.Message}");
+            }
+
             return RedirectToAction(nameof(Index));
         }
+
+
     }
 }

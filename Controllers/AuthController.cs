@@ -16,12 +16,13 @@ public class AuthController : Controller
 {
     private readonly INguoiDungRepository _repository;
     private readonly ApplicationDbContext _context; // Khai báo biến _context
+    private readonly IEmailService _emailService;
 
-    // Constructor
-    public AuthController(INguoiDungRepository repository, ApplicationDbContext context)
+    public AuthController(IEmailService emailService, INguoiDungRepository repository, ApplicationDbContext context)
     {
+        _emailService = emailService;
         _repository = repository;
-        _context = context; // Khởi tạo _context
+        _context = context;
     }
 
     public IActionResult Register()
@@ -162,4 +163,163 @@ public class AuthController : Controller
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         return RedirectToAction("Login");
     }
+
+
+
+    [HttpGet]
+    public IActionResult ForgotPassword()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [HttpPost]
+    public async Task<IActionResult> ForgotPassword(string email)
+    {
+        var user = await _repository.GetByEmailAsync(email);
+        if (user == null)
+        {
+            ModelState.AddModelError("", "Email không tồn tại.");
+            return View();
+        }
+
+        var newPassword = GenerateRandomPassword();
+        user.MatKhau = newPassword;
+        await _repository.UpdateAsync(user);
+
+        var emailSent = await SendNewPasswordEmail(user.Email, newPassword);
+
+        if (emailSent)
+        {
+            // Truyền qua TempData để không cần model
+            TempData["ResetEmail"] = user.Email;
+            TempData["ResetPassword"] = newPassword;
+            return RedirectToAction("ChangePasswordAfterReset");
+        }
+
+        ModelState.AddModelError("", "Không thể gửi email.");
+        return View();
+    }
+
+
+    private string GenerateRandomPassword()
+    {
+        var length = 8;
+        var random = new Random();
+        const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        return new string(Enumerable.Range(0, length).Select(_ => chars[random.Next(chars.Length)]).ToArray());
+    }
+
+    private async Task<bool> SendNewPasswordEmail(string email, string newPassword)
+    {
+        try
+        {
+            string subject = "Mật khẩu mới của bạn";
+            string message = $"<p>Mật khẩu mới của bạn là: <b>{newPassword}</b></p><p>Vui lòng đăng nhập và thay đổi mật khẩu ngay sau đó.</p>";
+
+            await _emailService.SendEmailAsync(email, subject, message);
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            // Ghi log nếu cần
+            Console.WriteLine($"Gửi email thất bại: {ex.Message}");
+            return false;
+        }
+    }
+
+    public IActionResult ChangePassword()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ChangePassword(string newPassword, string confirmPassword)
+    {
+        var userId = int.Parse(User.FindFirst("UserId").Value);
+        var user = await _repository.GetByIdAsync(userId);
+        if (user == null)
+        {
+            return NotFound("Người dùng không tồn tại.");
+        }
+
+        if (newPassword != confirmPassword)
+        {
+            ModelState.AddModelError("", "Mật khẩu không khớp.");
+            return View();
+        }
+
+        user.MatKhau = newPassword;
+        await _repository.UpdateAsync(user);
+        return RedirectToAction("UserProfile");
+    }
+    [HttpGet]
+    public IActionResult ChangePasswordAfterReset()
+    {
+        ViewBag.Email = TempData["ResetEmail"];
+        ViewBag.TempPassword = TempData["ResetPassword"];
+        TempData.Keep(); // Giữ lại TempData cho POST nếu cần
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ChangePasswordAfterReset(string email, string tempPassword, string newPassword, string confirmPassword)
+    {
+        var user = await _repository.GetByEmailAsync(email);
+        if (user == null)
+        {
+            ModelState.AddModelError("", "Người dùng không tồn tại.");
+            return View();
+        }
+
+        if (user.MatKhau != tempPassword)
+        {
+            ModelState.AddModelError("", "Mật khẩu tạm thời không đúng.");
+            return View();
+        }
+
+        if (newPassword != confirmPassword)
+        {
+            ModelState.AddModelError("", "Mật khẩu mới không khớp.");
+            return View();
+        }
+
+        user.MatKhau = newPassword;
+        await _repository.UpdateAsync(user);
+
+        // Gửi email cảnh báo khi thay đổi mật khẩu
+        var emailSent = await SendPasswordChangeAlertEmail(user.Email);
+
+        if (!emailSent)
+        {
+            ModelState.AddModelError("", "Không thể gửi email cảnh báo.");
+            return View();
+        }
+
+        return RedirectToAction("Login");
+    }
+
+    // Phương thức gửi email cảnh báo
+    private async Task<bool> SendPasswordChangeAlertEmail(string email)
+    {
+        try
+        {
+            string subject = "Cảnh báo thay đổi mật khẩu";
+            string message = $"<p>Chúng tôi muốn thông báo rằng mật khẩu của bạn đã được thay đổi.</p>" +
+                             "<p>Nếu bạn không thực hiện thay đổi này, vui lòng kiểm tra tài khoản của bạn ngay lập tức và liên hệ với chúng tôi.</p>";
+
+            await _emailService.SendEmailAsync(email, subject, message);
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            // Ghi log nếu cần
+            Console.WriteLine($"Gửi email cảnh báo thất bại: {ex.Message}");
+            return false;
+        }
+    }
+
+
 }
