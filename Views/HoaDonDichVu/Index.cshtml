@@ -219,11 +219,16 @@
                                 {
                                     <span class="badge bg-success">@item.TrangThai</span>
                                 }
+                                else if (item.TrangThai == "Quá hạn thanh toán")
+                                {
+                                    <span class="badge bg-danger">@item.TrangThai</span>
+                                }
                                 else
                                 {
                                     <span class="badge bg-warning">@item.TrangThai</span>
                                 }
                             </td>
+
                             <td>
                                 @if (item.HoaDonDichVu_DichVus != null && item.HoaDonDichVu_DichVus.Any())
                                 {
@@ -244,7 +249,7 @@
 
                                 @if (User.IsInRole("Ban quản lý"))
                                 {
-                                    <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-warning btn-sm">Sửa</a>
+                                    <a asp-action="Duyet" asp-route-id="@item.ID" class="btn btn-warning btn-sm">Duyệt</a>
                                     <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger btn-sm"
                                        onclick="return confirm('Bạn có chắc muốn xóa hóa đơn này?');">Xóa</a>
                                 }
