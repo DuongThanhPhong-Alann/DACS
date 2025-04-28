@@ -23,6 +23,7 @@ namespace QLCCCC.Models
         public DateTime NgayLap { get; set; } = DateTime.Now;
 
         [Required]
+        [StringLength(50)]
         public string TrangThai { get; set; } = "Chưa thanh toán";
 
         [ForeignKey("ID_CanHo")]
