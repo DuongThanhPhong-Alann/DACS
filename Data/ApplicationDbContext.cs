@@ -19,7 +19,7 @@ namespace QLCCCC.Data
         public DbSet<HinhAnhCanHo> HinhAnhCanHos { get; set; } = null!;
         public DbSet<TinTuc> TinTucs { get; set; } = null!;
         public DbSet<HinhAnhDichVu> HinhAnhDichVus { get; set; } = null!;
-
+        public DbSet<ChuHo> ChuHos { get; set; } = null!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Cấu hình cho ChungCu
