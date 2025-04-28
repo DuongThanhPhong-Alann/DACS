@@ -12,7 +12,7 @@
     }
 
     h2 {
-        color: #d35400;
+        color: #1e3a8a; /* Xanh dương cho tiêu đề */
         font-size: 1.8rem;
         font-weight: 700;
         text-align: center;
@@ -50,6 +50,20 @@
         text-align: center;
         margin-top: 20px;
     }
+
+    .btn-warning {
+        background-color: #1e3a8a; /* Xanh dương cho nút "Đổi mật khẩu" */
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+        .btn-warning:hover {
+            background-color: #0d2f6c; /* Xanh dương đậm khi hover */
+        }
 </style>
 
 <div class="profile-container">
@@ -91,7 +105,6 @@
     <p style="text-align:center; margin-top:20px;">
         <a href="/NguoiDung/ChangePassword" class="btn btn-warning">Đổi mật khẩu</a>
     </p>
-
 </div>
 
 @section Scripts {
