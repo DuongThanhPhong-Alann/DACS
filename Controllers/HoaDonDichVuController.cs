@@ -22,14 +22,16 @@ namespace QLCCCC.Controllers
         public async Task<IActionResult> Index()
         {
             var hoaDonDichVus = await _context.HoaDonDichVus
-                .Include(h => h.CanHo)
-                .Include(h => h.ChungCu)
+                .Include(h => h.CanHo)  // Bao gồm thông tin căn hộ
+                    .ThenInclude(c => c.ChungCu)  // Bao gồm thông tin chung cư từ căn hộ
                 .Include(h => h.HoaDonDichVu_DichVus)
-                .ThenInclude(hdv => hdv.DichVu)
+                    .ThenInclude(hdv => hdv.DichVu)
+                .AsNoTracking()
                 .ToListAsync();
 
             return View(hoaDonDichVus);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetCanHoByChungCu(int chungCuId)
@@ -143,27 +145,7 @@ namespace QLCCCC.Controllers
         }
 
         // GET: HoaDonDichVu/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null) return NotFound();
-
-            var hoaDon = await _context.HoaDonDichVus
-                .Include(h => h.CanHo)
-                .Include(h => h.ChungCu)
-                .Include(h => h.HoaDonDichVu_DichVus)
-                .ThenInclude(hdv => hdv.DichVu)
-                .FirstOrDefaultAsync(h => h.ID == id);
-
-            if (hoaDon == null) return NotFound();
-
-            ViewBag.CanHos = new SelectList(_context.CanHos, "ID", "MaCan", hoaDon.ID_CanHo);
-            ViewBag.ChungCus = new SelectList(_context.ChungCus, "ID", "Ten", hoaDon.ID_ChungCu);
-            ViewBag.DichVus = new MultiSelectList(_context.DichVus, "ID", "TenDichVu", hoaDon.HoaDonDichVu_DichVus.Select(d => d.ID_DichVu));
-
-            return View(hoaDon);
-        }
-
-        [HttpGet]
+     
         public async Task<IActionResult> GetGiaDichVu(List<int> selectedDichVu)
         {
             if (selectedDichVu == null || !selectedDichVu.Any())
@@ -171,51 +153,12 @@ namespace QLCCCC.Controllers
                 return Json(0);
             }
 
+            // Kiểm tra và tính toán tổng giá dịch vụ được chọn
             var totalPrice = await _context.DichVus
                 .Where(d => selectedDichVu.Contains(d.ID))
                 .SumAsync(d => d.Gia);
 
             return Json(totalPrice);
-        }
-
-        // POST: HoaDonDichVu/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, HoaDonDichVu hoaDon, List<int>? selectedDichVu)
-        {
-            if (id != hoaDon.ID) return NotFound();
-
-            var hoaDonDb = await _context.HoaDonDichVus
-                .Include(h => h.HoaDonDichVu_DichVus)
-                .FirstOrDefaultAsync(h => h.ID == id);
-
-            if (hoaDonDb == null) return NotFound();
-
-            // Cập nhật các trường từ model gửi lên
-            hoaDonDb.NgayLap = hoaDon.NgayLap;
-            hoaDonDb.TrangThai = hoaDon.TrangThai; // Cập nhật trạng thái
-            hoaDonDb.SoTien = selectedDichVu != null
-                ? await _context.DichVus.Where(d => selectedDichVu.Contains(d.ID)).SumAsync(d => d.Gia)
-                : 0;
-
-            // Xóa dịch vụ cũ
-            _context.HoaDonDichVu_DichVus.RemoveRange(hoaDonDb.HoaDonDichVu_DichVus);
-
-            // Thêm dịch vụ mới
-            if (selectedDichVu != null && selectedDichVu.Any())
-            {
-                var newDichVus = selectedDichVu.Select(dvId => new HoaDonDichVu_DichVu
-                {
-                    ID_HoaDon = id,
-                    ID_DichVu = dvId
-                }).ToList();
-
-                _context.HoaDonDichVu_DichVus.AddRange(newDichVus);
-            }
-
-            _context.Update(hoaDonDb);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
         }
 
         // GET: HoaDonDichVu/Delete/5
@@ -251,5 +194,46 @@ namespace QLCCCC.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+
+
+
+
+        // GET: HoaDonDichVu/Duyet/5
+public async Task<IActionResult> Duyet(int? id)
+{
+    if (id == null) return NotFound();
+
+    var hoaDon = await _context.HoaDonDichVus
+        .Include(h => h.CanHo)
+        .Include(h => h.ChungCu)
+        .FirstOrDefaultAsync(h => h.ID == id);
+
+    if (hoaDon == null) return NotFound();
+
+    return View(hoaDon);
+}
+
+// POST: HoaDonDichVu/Duyet/5
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Duyet(int id, string trangThai)
+{
+    if (string.IsNullOrWhiteSpace(trangThai))
+    {
+        ModelState.AddModelError("", "Trạng thái không hợp lệ.");
+        return RedirectToAction(nameof(Index));
+    }
+
+    var hoaDon = await _context.HoaDonDichVus.FindAsync(id);
+    if (hoaDon == null) return NotFound();
+
+    hoaDon.TrangThai = trangThai;
+    _context.Update(hoaDon);
+    await _context.SaveChangesAsync();
+
+    return RedirectToAction(nameof(Index));
+}
+
     }
 }

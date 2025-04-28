@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using QLCCCC.Services;
 
 namespace QLCCCC.Controllers
 {
@@ -17,12 +18,16 @@ namespace QLCCCC.Controllers
     {
         private readonly IDichVuRepository _dichVuRepository;
         private readonly ApplicationDbContext _context;
-
-        public DichVuController(IDichVuRepository dichVuRepository, ApplicationDbContext context)
+        private readonly IEmailService _emailService;         // ✨ Thêm dòng này
+        private readonly ILogger<DichVuController> _logger;   // ✨ Thêm dòng này
+        public DichVuController(IDichVuRepository dichVuRepository, ApplicationDbContext context, IEmailService emailService, ILogger<DichVuController> logger)
         {
             _dichVuRepository = dichVuRepository ?? throw new ArgumentNullException(nameof(dichVuRepository));
             _context = context ?? throw new ArgumentNullException(nameof(context));
+            _emailService = emailService ?? throw new ArgumentNullException(nameof(emailService)); // ✨
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));                   // ✨
         }
+
 
         // Trang danh sách dịch vụ
         public async Task<IActionResult> Index()
@@ -237,8 +242,6 @@ namespace QLCCCC.Controllers
 
             return Json(response);
         }
-
-        // Xác nhận đăng ký dịch vụ
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
@@ -271,7 +274,45 @@ namespace QLCCCC.Controllers
             _context.HoaDonDichVus.Add(hoaDon);
             await _context.SaveChangesAsync();
 
+            // ✨ Lấy UserId từ claims
+            var userIdStr = User.FindFirst("UserId")?.Value;
+            if (string.IsNullOrEmpty(userIdStr)) return Unauthorized();
+
+            var userId = int.Parse(userIdStr);
+            var user = await _context.NguoiDungs.FirstOrDefaultAsync(u => u.ID == userId);
+
+            if (user == null || string.IsNullOrEmpty(user.Email))
+            {
+                _logger.LogError($"Không tìm thấy email của cư dân có ID {userId}");
+                return Json(new { success = false, message = "Không tìm thấy email cư dân." });
+            }
+
+            // ✉️ Soạn nội dung mail
+            var subject = "Xác nhận đăng ký dịch vụ thành công";
+            var body = $@"
+        <p>Xin chào <strong>{user.HoTen}</strong>,</p>
+        <p>Bạn đã đăng ký dịch vụ <strong>{dichVu.TenDichVu}</strong> thành công!</p>
+        <table style='border-collapse: collapse; width: 100%;'>
+            <tr><td style='border: 1px solid #ddd; padding: 8px;'><strong>Dịch vụ:</strong></td><td style='border: 1px solid #ddd; padding: 8px;'>{dichVu.TenDichVu}</td></tr>
+            <tr><td style='border: 1px solid #ddd; padding: 8px;'><strong>Số tiền:</strong></td><td style='border: 1px solid #ddd; padding: 8px;'>{request.SoTien:N0} VND</td></tr>
+            <tr><td style='border: 1px solid #ddd; padding: 8px;'><strong>Ngày đăng ký:</strong></td><td style='border: 1px solid #ddd; padding: 8px;'>{DateTime.Now:HH:mm dd/MM/yyyy}</td></tr>
+        </table>
+        <p>Vui lòng thanh toán trong thời gian quy định.</p>
+        <p>Trân trọng,<br/>Ban Quản lý</p>
+    ";
+
+            try
+            {
+                await _emailService.SendEmailAsync(user.Email, subject, body, "duongthanhphong1618@gmail.com");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Không gửi được email xác nhận dịch vụ: {ex.Message}");
+            }
+
             return Json(new { success = true, message = "Đăng ký dịch vụ thành công!" });
         }
+
+
     }
 }
