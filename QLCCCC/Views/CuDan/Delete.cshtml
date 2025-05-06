@@ -1,0 +1,29 @@
+﻿@model QLCCCC.Models.CuDan
+
+<h2>Xóa Cư Dân</h2>
+
+<p>Bạn có chắc chắn muốn xóa cư dân này không?</p>
+
+<table class="table">
+    <tr>
+        <th>ID:</th>
+        <td>@Model.ID</td>
+    </tr>
+    <tr>
+        <th>Người Dùng:</th>
+        <td>@Model.NguoiDung?.HoTen</td>
+    </tr>
+    <tr>
+        <th>Chung Cư:</th>
+        <td>@Model.ChungCu?.Ten</td>
+    </tr>
+    <tr>
+        <th>Căn Hộ:</th>
+        <td>@Model.CanHo?.MaCan</td>
+    </tr>
+</table>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="ID" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+</form>

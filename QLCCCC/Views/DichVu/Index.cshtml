@@ -1,0 +1,462 @@
+﻿@model IEnumerable<QLCCCC.Models.DichVu>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khám Phá Các Dịch Vụ - QLCCCC</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            background: linear-gradient(to right, #fdf6e4, #fbe7c6);
+            font-family: 'Arial', sans-serif;
+            color: #8d5524;
+        }
+
+        .container {
+            margin-top: 30px;
+            max-width: 1300px;
+        }
+
+        .header-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .header-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 1;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #fff;
+            border: 1px solid #f5e6cc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            margin-bottom: 30px;
+        }
+
+            .table thead th {
+                background: linear-gradient(135deg, #f5cba8, #e67e22);
+                color: #fff;
+                font-weight: 600;
+                padding: 15px;
+                text-align: left;
+                border-bottom: 2px solid #d35400;
+            }
+
+            .table tbody td {
+                padding: 15px;
+                font-size: 1rem;
+                color: #8d5524;
+                border-bottom: 1px solid #f5e6cc;
+                background-color: #ffffff;
+                transition: background-color 0.3s ease;
+            }
+
+            .table tbody tr:last-child td {
+                border-bottom: none;
+            }
+
+            .table tbody tr:hover td {
+                background-color: #fef9f2;
+            }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            border: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background: linear-gradient(135deg, #d35400, #c0392b);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                color: #fff;
+            }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-info {
+            background-color: #e67e22;
+            border-color: #e67e22;
+            color: #fff;
+        }
+
+            .btn-info:hover {
+                background-color: #d35400;
+                border-color: #d35400;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn-warning {
+            background-color: #f1c40f;
+            border-color: #f1c40f;
+            color: #fff;
+        }
+
+            .btn-warning:hover {
+                background-color: #e2b307;
+                border-color: #e2b307;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn-danger {
+            background-color: #c0392b;
+            border-color: #c0392b;
+            color: #fff;
+        }
+
+            .btn-danger:hover {
+                background-color: #e74c3c;
+                border-color: #e74c3c;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn-success {
+            background-color: #27ae60;
+            border-color: #27ae60;
+            color: #fff;
+        }
+
+            .btn-success:hover {
+                background-color: #219653;
+                border-color: #219653;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .service-squares {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Giảm khoảng cách giữa các ô để phù hợp với 4 ô trên 1 hàng */
+            padding: 20px 0;
+        }
+
+        .service-box {
+            position: relative;
+            width: 100%;
+            height: 300px; /* Giảm chiều cao để phù hợp với 4 ô trên 1 hàng */
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            text-decoration: none;
+            color: inherit;
+            flex: 0 0 25%; /* Thay đổi từ 33.33% thành 25% để hiển thị 4 ô trên 1 hàng */
+            max-width: 25%; /* Thay đổi từ 33.33% thành 25% */
+        }
+
+            .service-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+            }
+
+        .service-box-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .service-box:hover .service-box-background {
+            transform: scale(1.05);
+        }
+
+        .service-box-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px; /* Giảm padding để phù hợp với kích thước nhỏ hơn */
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            text-align: left;
+        }
+
+        .service-box h5 {
+            font-size: 1.4rem; /* Giảm kích thước chữ để phù hợp với ô nhỏ hơn */
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-box p {
+            font-size: 0.9rem; /* Giảm kích thước chữ để phù hợp với ô nhỏ hơn */
+            color: #f5f5f5;
+            margin: 3px 0; /* Giảm khoảng cách giữa các dòng */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+            .service-box p strong {
+                color: #fff;
+            }
+
+        .modal-content {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #f5cba8, #e67e22);
+            color: #fff;
+            border-bottom: none;
+        }
+
+        .modal-body {
+            color: #8d5524;
+        }
+
+        .modal-footer .btn-success {
+            background-color: #27ae60;
+            border-color: #27ae60;
+        }
+
+            .modal-footer .btn-success:hover {
+                background-color: #219653;
+                border-color: #219653;
+            }
+
+        .modal-footer .btn-secondary {
+            background-color: #7f8c8d;
+            border-color: #7f8c8d;
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background-color: #6c757d;
+                border-color: #6c757d;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Container cho hình ảnh và tiêu đề -->
+        <div class="header-container">
+            <img src="~/images/DichVu.jpg" alt="Hình ảnh đầu trang Dịch Vụ" class="header-image" />
+            <h2 class="header-title">Khám Phá Các Dịch Vụ</h2>
+        </div>
+
+        <!-- Chỉ hiển thị nút "Thêm mới" cho Ban quản lý -->
+        @if (User.IsInRole("Ban quản lý"))
+        {
+            <a asp-action="Create" class="btn btn-primary mb-3">Thêm Mới</a>
+        }
+
+        <!-- Chỉ hiển thị bảng danh sách dịch vụ cho Ban quản lý -->
+        @if (User.IsInRole("Ban quản lý"))
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên Dịch Vụ</th>
+                        <th>Mô Tả</th>
+                        <th>Giá</th>
+                        <th>Hình Ảnh</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var dichVu in Model)
+                    {
+                        <tr>
+                            <td>@dichVu.ID</td>
+                            <td>@dichVu.TenDichVu</td>
+                            <td>@dichVu.MoTa</td>
+                            <td>@dichVu.Gia.ToString("C0", new System.Globalization.CultureInfo("vi-VN"))</td>
+                            <td>
+                                @if (dichVu.HinhAnhDichVus != null && dichVu.HinhAnhDichVus.Count > 0)
+                                {
+                                    <img src="@dichVu.HinhAnhDichVus.FirstOrDefault()?.DuongDan" alt="Hình ảnh dịch vụ" style="width: 100px; height: auto;" />
+                                }
+                                else
+                                {
+                                    <span>Không có hình</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@dichVu.ID" class="btn btn-info btn-sm">Chi tiết</a>
+                                <a asp-action="Edit" asp-route-id="@dichVu.ID" class="btn btn-warning btn-sm">Chỉnh sửa</a>
+                                <a asp-action="Delete" asp-route-id="@dichVu.ID" class="btn btn-danger btn-sm">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+        <!-- Khu vực hiển thị dịch vụ dưới dạng ô vuông với hình ảnh làm nền -->
+        <div class="service-squares">
+            @foreach (var dichVu in Model)
+            {
+                <a asp-action="Details" asp-route-id="@dichVu.ID" class="service-box">
+                    @if (dichVu.HinhAnhDichVus != null && dichVu.HinhAnhDichVus.Count > 0)
+                    {
+                        <img src="@dichVu.HinhAnhDichVus.FirstOrDefault()?.DuongDan" alt="Hình ảnh @dichVu.TenDichVu" class="service-box-background" />
+                    }
+                    else
+                    {
+                        <img src="~/images/default-service.jpg" alt="Hình ảnh mặc định" class="service-box-background" />
+                    }
+                    <div class="service-box-content">
+                        <div>
+                            <h5>@dichVu.TenDichVu</h5>
+                            <p><strong>Mô Tả:</strong> @dichVu.MoTa</p>
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("Cư dân") || User.IsInRole("Ban quản lý")))
+                            {
+                                <p><strong>Giá:</strong> @dichVu.Gia.ToString("C0", new System.Globalization.CultureInfo("vi-VN"))</p>
+                            }
+                        </div>
+                        @if (User.IsInRole("Cư dân"))
+                        {
+                            <div>
+                                <button type="button" class="btn btn-success btn-sm square-register-service" data-id="@dichVu.ID">Đăng ký</button>
+                            </div>
+                        }
+                    </div>
+                </a>
+            }
+        </div>
+
+        <!-- Modal hiển thị thông tin đăng ký và xác nhận -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Xác nhận Đăng ký Dịch Vụ</h5>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Dịch vụ:</strong> <span id="modalTenDichVu"></span></p>
+                        <p><strong>Họ tên:</strong> <span id="modalHoTen"></span></p>
+                        <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+                        <p><strong>Số điện thoại:</strong> <span id="modalSoDienThoai"></span></p>
+                        <p><strong>Mã căn hộ:</strong> <span id="modalMaCan"></span></p>
+                        <p><strong>Tên chung cư:</strong> <span id="modalTenChungCu"></span></p>
+                        <p><strong>Số tiền:</strong> <span id="modalSoTien"></span></p>
+                        <p>Bạn có chắc chắn muốn đăng ký dịch vụ này không?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="confirmRegister">Xác nhận</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Quay lại</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var registerData;
+
+            $('.square-register-service').click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                handleRegister($(this).data('id'));
+            });
+
+            function handleRegister(dichVuId) {
+                $.ajax({
+                    url: '/DichVu/RegisterService',
+                    type: 'GET',
+                    data: { id: dichVuId },
+                    success: function (response) {
+                        if (response.success) {
+                            registerData = {
+                                dichVuId: response.dichVuId,
+                                idCanHo: response.idCanHo,
+                                idChungCu: response.idChungCu,
+                                soTien: response.soTien
+                            };
+
+                            $('#modalTenDichVu').text(response.tenDichVu);
+                            $('#modalHoTen').text(response.hoTen);
+                            $('#modalEmail').text(response.email);
+                            $('#modalSoDienThoai').text(response.soDienThoai);
+                            $('#modalMaCan').text(response.maCan);
+                            $('#modalTenChungCu').text(response.tenChungCu);
+                            $('#modalSoTien').text(response.soTien.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
+
+                            $('#confirmModal').modal('show');
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('Đã xảy ra lỗi khi lấy thông tin đăng ký.');
+                    }
+                });
+            }
+
+            $('#confirmRegister').click(function () {
+                $.ajax({
+                    url: '/DichVu/ConfirmRegisterService',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    headers: {
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    data: JSON.stringify(registerData),
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                            $('#confirmModal').modal('hide');
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('Đã xảy ra lỗi khi xác nhận đăng ký.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

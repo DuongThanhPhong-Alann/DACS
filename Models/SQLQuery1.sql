@@ -1,4 +1,0 @@
-ALTER TABLE HoaDonDichVus
-DROP CONSTRAINT CK_HoaDonDichVu_TrangThai;
-
-

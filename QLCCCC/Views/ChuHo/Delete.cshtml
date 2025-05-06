@@ -1,0 +1,25 @@
+﻿@model QLCCCC.Models.ChuHo
+
+@{
+    ViewData["Title"] = "Xóa Chủ Hộ";
+}
+
+<div class="container mt-5">
+    <div class="form-wrapper p-4 rounded shadow-sm mx-auto text-center" style="max-width: 600px; background: linear-gradient(to right, #fff0f0, #ffe5e5);">
+        <h2 class="text-danger mb-4">Xóa Chủ Hộ</h2>
+
+        <div class="alert alert-danger rounded-pill fw-bold">
+            Bạn có chắc chắn muốn xóa Chủ Hộ <strong>@Model.CuDan?.NguoiDung?.HoTen</strong> không?
+        </div>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="ID" />
+            <button type="submit" class="btn btn-danger px-4 py-2 rounded-pill fw-bold">
+                <i class="bi bi-trash"></i> Xóa
+            </button>
+            <a asp-action="Index" class="btn btn-secondary px-4 py-2 rounded-pill fw-bold ms-2">
+                Hủy
+            </a>
+        </form>
+    </div>
+</div>
