@@ -1,10 +1,17 @@
 Tên đề tài: APT-CONNECT: Hệ Thống Quản Lý và Trải Nghiệm Chung Cư
+
 Giảng viên hướng dẫn: Trần Đăng Khoa
+
 Sinh viên/ nhóm sinh viên thực hiện đề tài:
+
 (1) Dương Thanh Phong MSSV: 2280602345 Lớp: 22DTHD4
+
 (2) Lê Minh Hiếu MSSV: 2280600947 Lớp: 22DTHD4
+
 (3) Trương Vệ Quang MSSV: 2280602568 Lớp: 22DTHD4
+
 Ngành : Công Nghệ Thông Tin
+
 Chuyên ngành : Công Nghệ Phần Mềm
 
 --------------------------------------------------------------------
