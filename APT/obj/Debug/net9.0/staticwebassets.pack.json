@@ -1,0 +1,837 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\APT.bundle.scp.css",
+      "PackagePath": "staticwebassets\\APT.p4qvt85vkf.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\00c78069-a4bf-4513-812a-d9fcd4eb280a_canho4.jpg",
+      "PackagePath": "staticwebassets\\images\\00c78069-a4bf-4513-812a-d9fcd4eb280a_canho4.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\08ef3327-709a-4f7e-bd14-fd489c527372_Canho6.jpg",
+      "PackagePath": "staticwebassets\\images\\08ef3327-709a-4f7e-bd14-fd489c527372_Canho6.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\0adea74e-7fe9-457a-bdb7-ed06ce8c1cd9_Canho10.jpg",
+      "PackagePath": "staticwebassets\\images\\0adea74e-7fe9-457a-bdb7-ed06ce8c1cd9_Canho10.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\0dd02330-2c7c-462d-a381-cc173be2cbc5_Canho9.jpg",
+      "PackagePath": "staticwebassets\\images\\0dd02330-2c7c-462d-a381-cc173be2cbc5_Canho9.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\12bd013c-d876-4285-a5e8-1d8ce3c357f3_canho3.jpg",
+      "PackagePath": "staticwebassets\\images\\12bd013c-d876-4285-a5e8-1d8ce3c357f3_canho3.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\17b7493f-3e33-4d5d-8d36-a20cc27d0db2_CanHo1.jpg",
+      "PackagePath": "staticwebassets\\images\\17b7493f-3e33-4d5d-8d36-a20cc27d0db2_CanHo1.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\195327ea-b364-4085-a7fc-5fc820ca455d_Canho10.jpg",
+      "PackagePath": "staticwebassets\\images\\195327ea-b364-4085-a7fc-5fc820ca455d_Canho10.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\2672f909-759a-4706-905e-ed53213df489_Canho6.jpg",
+      "PackagePath": "staticwebassets\\images\\2672f909-759a-4706-905e-ed53213df489_Canho6.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\26828658-6176-4f07-9159-e65e4f405470_canho4.jpg",
+      "PackagePath": "staticwebassets\\images\\26828658-6176-4f07-9159-e65e4f405470_canho4.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\26c553f3-2ea8-46bc-9109-d1ee79c95c71_Canho5.jpg",
+      "PackagePath": "staticwebassets\\images\\26c553f3-2ea8-46bc-9109-d1ee79c95c71_Canho5.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\2a772c2e-50e1-4156-9881-e410fe9101b4_canho4.jpg",
+      "PackagePath": "staticwebassets\\images\\2a772c2e-50e1-4156-9881-e410fe9101b4_canho4.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\30471508-6dcc-43d5-b8cd-70c876e4c796_CanHo1.jpg",
+      "PackagePath": "staticwebassets\\images\\30471508-6dcc-43d5-b8cd-70c876e4c796_CanHo1.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\37500fac-6531-4b45-8718-f94658463a71_Canho7.jpg",
+      "PackagePath": "staticwebassets\\images\\37500fac-6531-4b45-8718-f94658463a71_Canho7.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\3ba1cfa7-c3eb-4757-a323-33bcafaadf8b_Canho5.jpg",
+      "PackagePath": "staticwebassets\\images\\3ba1cfa7-c3eb-4757-a323-33bcafaadf8b_Canho5.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\4fa60a33-ff5d-4427-928f-ee9f9753c6e9_canho2.jpg",
+      "PackagePath": "staticwebassets\\images\\4fa60a33-ff5d-4427-928f-ee9f9753c6e9_canho2.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\5944c863-901d-4c00-99a1-196ca07b2d11_canho1.jpg",
+      "PackagePath": "staticwebassets\\images\\5944c863-901d-4c00-99a1-196ca07b2d11_canho1.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\598eca2a-36be-42b6-85de-bda4db08afd6_canho4.jpg",
+      "PackagePath": "staticwebassets\\images\\598eca2a-36be-42b6-85de-bda4db08afd6_canho4.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\5d1239f7-7819-4fb2-a908-06837e40545e_Canho7.jpg",
+      "PackagePath": "staticwebassets\\images\\5d1239f7-7819-4fb2-a908-06837e40545e_Canho7.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\61a74a3c-e7a4-4d7b-855d-09d237fa8768_canho3.jpg",
+      "PackagePath": "staticwebassets\\images\\61a74a3c-e7a4-4d7b-855d-09d237fa8768_canho3.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\62654692-705e-40a2-b9c5-5ac7b7a481e0_Canho8.jpg",
+      "PackagePath": "staticwebassets\\images\\62654692-705e-40a2-b9c5-5ac7b7a481e0_Canho8.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\64a9ec68-4d90-4a76-8efd-996bcef12493_canho1.jpg",
+      "PackagePath": "staticwebassets\\images\\64a9ec68-4d90-4a76-8efd-996bcef12493_canho1.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\68ad3b93-eddf-4b5c-848a-7ba8f3f131de_Canho9.jpg",
+      "PackagePath": "staticwebassets\\images\\68ad3b93-eddf-4b5c-848a-7ba8f3f131de_Canho9.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\68da1b95-97e9-4266-b6fc-d9caf98e3262_Canho5.jpg",
+      "PackagePath": "staticwebassets\\images\\68da1b95-97e9-4266-b6fc-d9caf98e3262_Canho5.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\6a046d01-5b34-49b6-bcd8-21b47d634f0a_CanHo1.jpg",
+      "PackagePath": "staticwebassets\\images\\6a046d01-5b34-49b6-bcd8-21b47d634f0a_CanHo1.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\6ae5e361-7478-4e04-ba8c-5866aa9054c8_canho1.jpg",
+      "PackagePath": "staticwebassets\\images\\6ae5e361-7478-4e04-ba8c-5866aa9054c8_canho1.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\71552d67-7ab5-49b6-9bee-d05bca13e8fc_Canho6.jpg",
+      "PackagePath": "staticwebassets\\images\\71552d67-7ab5-49b6-9bee-d05bca13e8fc_Canho6.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\74911c1b-4db9-4ac2-97a9-16013a8c5027_canho2.jpg",
+      "PackagePath": "staticwebassets\\images\\74911c1b-4db9-4ac2-97a9-16013a8c5027_canho2.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\754417c1-f758-448a-95c9-5bba5b3834da_Canho9.jpg",
+      "PackagePath": "staticwebassets\\images\\754417c1-f758-448a-95c9-5bba5b3834da_Canho9.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\7c9dee4c-903f-4f41-a775-7f30fcb4621a_Canho8.jpg",
+      "PackagePath": "staticwebassets\\images\\7c9dee4c-903f-4f41-a775-7f30fcb4621a_Canho8.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\81c30091-d817-412d-af28-8e9159ebd52e_Hoàng Anh Gold House.jpg",
+      "PackagePath": "staticwebassets\\images\\81c30091-d817-412d-af28-8e9159ebd52e_Hoàng Anh Gold House.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\834e0d5d-0daa-4b9f-ba99-5cc87165afd7_canho4.jpg",
+      "PackagePath": "staticwebassets\\images\\834e0d5d-0daa-4b9f-ba99-5cc87165afd7_canho4.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\8409ec74-a388-46ac-b618-688492c5474f_Canho9.jpg",
+      "PackagePath": "staticwebassets\\images\\8409ec74-a388-46ac-b618-688492c5474f_Canho9.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\853bb0b6-1bee-4570-b17c-46c9c06d4c48_canho3.jpg",
+      "PackagePath": "staticwebassets\\images\\853bb0b6-1bee-4570-b17c-46c9c06d4c48_canho3.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\8a20e8de-1aca-4edc-a35c-8ec87b2236bd_834e0d5d-0daa-4b9f-ba99-5cc87165afd7_canho4.jpg",
+      "PackagePath": "staticwebassets\\images\\8a20e8de-1aca-4edc-a35c-8ec87b2236bd_834e0d5d-0daa-4b9f-ba99-5cc87165afd7_canho4.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\8aa8384d-ef97-48c4-aafc-1bbd9b89ad52_Canho7.jpg",
+      "PackagePath": "staticwebassets\\images\\8aa8384d-ef97-48c4-aafc-1bbd9b89ad52_Canho7.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\8f0d69ed-1dea-4601-9a63-307c71e0d5d4_Canho10.jpg",
+      "PackagePath": "staticwebassets\\images\\8f0d69ed-1dea-4601-9a63-307c71e0d5d4_Canho10.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\9a1268ea-1250-4820-9adf-8ff7ba0e029d_canho2.jpg",
+      "PackagePath": "staticwebassets\\images\\9a1268ea-1250-4820-9adf-8ff7ba0e029d_canho2.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\9fd3783f-d1a1-4f98-bc8f-b1347750b742_canho3.jpg",
+      "PackagePath": "staticwebassets\\images\\9fd3783f-d1a1-4f98-bc8f-b1347750b742_canho3.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\CanHo1.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\CanHo1.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\Canho10.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\Canho10.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\Canho5.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\Canho5.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\Canho6.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\Canho6.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\Canho7.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\Canho7.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\Canho8.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\Canho8.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\Canho9.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\Canho9.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\canho2.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\canho2.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\canho3.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\canho3.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\CanHo\\canho4.jpg",
+      "PackagePath": "staticwebassets\\images\\CanHo\\canho4.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\City Garden.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\City Garden.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\Eco Green Saigon.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\Eco Green Saigon.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\Hoàng Anh Gold House.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\Hoàng Anh Gold House.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\Richstar.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\Richstar.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\Saigon Pearl.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\Saigon Pearl.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\Sunrise City.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\Sunrise City.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\The Estella.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\The Estella.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\The Manor.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\The Manor.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\The Vista An Phú.jpg",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\The Vista An Phú.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ChungCu\\Vinhome Central Park.png",
+      "PackagePath": "staticwebassets\\images\\ChungCu\\Vinhome Central Park.png"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\City Garden.jpg",
+      "PackagePath": "staticwebassets\\images\\City Garden.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\DichVu.jpg",
+      "PackagePath": "staticwebassets\\images\\DichVu.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Eco Green Saigon.jpg",
+      "PackagePath": "staticwebassets\\images\\Eco Green Saigon.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Eco Green Sài Gòn_c1d7bf9c-1e05-4950-ac3b-814451a50138.jpg",
+      "PackagePath": "staticwebassets\\images\\Eco Green Sài Gòn_c1d7bf9c-1e05-4950-ac3b-814451a50138.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Hoàng Anh Gold House.jpg",
+      "PackagePath": "staticwebassets\\images\\Hoàng Anh Gold House.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Orchard Hill_841d90a6-a1dc-43ca-b8ca-103aadd4d7eb.webp",
+      "PackagePath": "staticwebassets\\images\\Orchard Hill_841d90a6-a1dc-43ca-b8ca-103aadd4d7eb.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Richstar.jpg",
+      "PackagePath": "staticwebassets\\images\\Richstar.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\SUNRISE RIVERSIDE_ddaa5dfe-151f-4c89-a589-a7dd26987d92.jpg",
+      "PackagePath": "staticwebassets\\images\\SUNRISE RIVERSIDE_ddaa5dfe-151f-4c89-a589-a7dd26987d92.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Saigon Pearl.jpg",
+      "PackagePath": "staticwebassets\\images\\Saigon Pearl.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Sunrise City.jpg",
+      "PackagePath": "staticwebassets\\images\\Sunrise City.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\The Estella.jpg",
+      "PackagePath": "staticwebassets\\images\\The Estella.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\The Manor.jpg",
+      "PackagePath": "staticwebassets\\images\\The Manor.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\The Vista An Phú.jpg",
+      "PackagePath": "staticwebassets\\images\\The Vista An Phú.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc.jpg",
+      "PackagePath": "staticwebassets\\images\\Tintuc.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\Eco Green Sài Gòn.jpg",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\Eco Green Sài Gòn.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\Orchard Hill.webp",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\Orchard Hill.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\SUNRISE RIVERSIDE.jpg",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\SUNRISE RIVERSIDE.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\avatar1742540097917-1742540098589778770015.webp",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\avatar1742540097917-1742540098589778770015.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\bluegem.webp",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\bluegem.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\chung-cu201-1742452090848933760660-1742513781057-17425137811381657021757.webp",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\chung-cu201-1742452090848933760660-1742513781057-17425137811381657021757.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\eco-retreat.jpg",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\eco-retreat.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\estella-heights.jpg",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\estella-heights.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\saigonpear.webp",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\saigonpear.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\smart-scaled3006202413321237-22320689-1742982406582-1742982407019616324617.webp",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\smart-scaled3006202413321237-22320689-1742982406582-1742982407019616324617.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\the manor.webp",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\the manor.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\the-river-thu-thiem-1-6903.jpg",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\the-river-thu-thiem-1-6903.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Tintuc\\Độc quyền Xanh SM.jpg",
+      "PackagePath": "staticwebassets\\images\\Tintuc\\Độc quyền Xanh SM.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Vinhome Central Park.png",
+      "PackagePath": "staticwebassets\\images\\Vinhome Central Park.png"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ab36a8c3-39cb-4aef-a46b-6a1b532174fa_Canho6.jpg",
+      "PackagePath": "staticwebassets\\images\\ab36a8c3-39cb-4aef-a46b-6a1b532174fa_Canho6.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\aebe8bca-cf87-4cd2-b34b-baadda211aa9_26828658-6176-4f07-9159-e65e4f405470_canho4.jpg",
+      "PackagePath": "staticwebassets\\images\\aebe8bca-cf87-4cd2-b34b-baadda211aa9_26828658-6176-4f07-9159-e65e4f405470_canho4.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\avatar1742540097917-1742540098589778770015_952f42f9-ba50-4b26-892b-a035cb55202c.webp",
+      "PackagePath": "staticwebassets\\images\\avatar1742540097917-1742540098589778770015_952f42f9-ba50-4b26-892b-a035cb55202c.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\b608c8ee-0a54-4218-8cac-f821b69eaa2a_canho2.jpg",
+      "PackagePath": "staticwebassets\\images\\b608c8ee-0a54-4218-8cac-f821b69eaa2a_canho2.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\bluegem_4c9c02eb-c2fe-4f27-9cd9-934c05ee1fe5.webp",
+      "PackagePath": "staticwebassets\\images\\bluegem_4c9c02eb-c2fe-4f27-9cd9-934c05ee1fe5.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\c1e57bbb-dd0f-48e2-9528-3657d84e998a_2a772c2e-50e1-4156-9881-e410fe9101b4_canho4.jpg",
+      "PackagePath": "staticwebassets\\images\\c1e57bbb-dd0f-48e2-9528-3657d84e998a_2a772c2e-50e1-4156-9881-e410fe9101b4_canho4.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\c422b278-e1ac-4871-8830-2d6694727231_Canho10.jpg",
+      "PackagePath": "staticwebassets\\images\\c422b278-e1ac-4871-8830-2d6694727231_Canho10.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\c8d8fdc8-f0b2-42af-9028-66a2e384790a_Canho5.jpg",
+      "PackagePath": "staticwebassets\\images\\c8d8fdc8-f0b2-42af-9028-66a2e384790a_Canho5.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ccc3dc24-6913-46e1-90af-adae605abc64_Canho5.jpg",
+      "PackagePath": "staticwebassets\\images\\ccc3dc24-6913-46e1-90af-adae605abc64_Canho5.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\cd454f45-7cdb-4638-99a5-246ca5174ff2_Canho10.jpg",
+      "PackagePath": "staticwebassets\\images\\cd454f45-7cdb-4638-99a5-246ca5174ff2_Canho10.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\chung-cu201-1742452090848933760660-1742513781057-17425137811381657021757_cee51c2f-3762-4498-8400-df60f1f0eafc.webp",
+      "PackagePath": "staticwebassets\\images\\chung-cu201-1742452090848933760660-1742513781057-17425137811381657021757_cee51c2f-3762-4498-8400-df60f1f0eafc.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\chuyendo.jpg",
+      "PackagePath": "staticwebassets\\images\\chuyendo.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\contrung.jpg",
+      "PackagePath": "staticwebassets\\images\\contrung.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dad6deda-a298-45f1-82ad-781efbdc5c7f_Canho8.jpg",
+      "PackagePath": "staticwebassets\\images\\dad6deda-a298-45f1-82ad-781efbdc5c7f_Canho8.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\chuyendo - Copy.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\chuyendo - Copy.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\chuyendo.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\chuyendo.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\contrung.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\contrung.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\giat.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\giat.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\lapdat.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\lapdat.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\lapdatmaylanh.webp",
+      "PackagePath": "staticwebassets\\images\\dichvu\\lapdatmaylanh.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\lapden.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\lapden.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\lapdo.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\lapdo.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\maylanh.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\maylanh.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\nuocdongbinh.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\nuocdongbinh.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\sontuong.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\sontuong.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\suadien.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\suadien.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\suanuoc.webp",
+      "PackagePath": "staticwebassets\\images\\dichvu\\suanuoc.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\dichvu\\vesinh.jpg",
+      "PackagePath": "staticwebassets\\images\\dichvu\\vesinh.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\e097afcf-be7e-46df-9d9c-549147c8cd9f_canho2.jpg",
+      "PackagePath": "staticwebassets\\images\\e097afcf-be7e-46df-9d9c-549147c8cd9f_canho2.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\e1131a36-2484-4269-bc5e-a06875cb1257_CanHo1.jpg",
+      "PackagePath": "staticwebassets\\images\\e1131a36-2484-4269-bc5e-a06875cb1257_CanHo1.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\e116c7ea-c090-4543-89f9-76be23ded557_Canho9.jpg",
+      "PackagePath": "staticwebassets\\images\\e116c7ea-c090-4543-89f9-76be23ded557_Canho9.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ea38c57b-71e7-44ce-b657-aab6ccb8831e_canho3.jpg",
+      "PackagePath": "staticwebassets\\images\\ea38c57b-71e7-44ce-b657-aab6ccb8831e_canho3.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ec7d9617-c03c-43d2-980a-85d2a9299edd_canho2.jpg",
+      "PackagePath": "staticwebassets\\images\\ec7d9617-c03c-43d2-980a-85d2a9299edd_canho2.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\eco-retreat_18ef18a8-e4dc-47fa-a69d-a4a14a0a42ea.jpg",
+      "PackagePath": "staticwebassets\\images\\eco-retreat_18ef18a8-e4dc-47fa-a69d-a4a14a0a42ea.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\estella-heights_d89327ee-36bf-43e6-a0f7-0768e13eb639.jpg",
+      "PackagePath": "staticwebassets\\images\\estella-heights_d89327ee-36bf-43e6-a0f7-0768e13eb639.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\f15c0eb7-652e-45ef-aef2-fafb036679b5_Canho10.jpg",
+      "PackagePath": "staticwebassets\\images\\f15c0eb7-652e-45ef-aef2-fafb036679b5_Canho10.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\ff93088e-2ca5-4e7e-9ff1-e1e56e586568_Canho8.jpg",
+      "PackagePath": "staticwebassets\\images\\ff93088e-2ca5-4e7e-9ff1-e1e56e586568_Canho8.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\giat.jpg",
+      "PackagePath": "staticwebassets\\images\\giat.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\lapdatmaylanh.webp",
+      "PackagePath": "staticwebassets\\images\\lapdatmaylanh.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\lapden.jpg",
+      "PackagePath": "staticwebassets\\images\\lapden.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\lapdo.jpg",
+      "PackagePath": "staticwebassets\\images\\lapdo.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\maylanh.jpg",
+      "PackagePath": "staticwebassets\\images\\maylanh.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\nuocdongbinh.jpg",
+      "PackagePath": "staticwebassets\\images\\nuocdongbinh.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\saigonpear_0dc01622-8e3d-4438-9cc9-b736676f31fd.webp",
+      "PackagePath": "staticwebassets\\images\\saigonpear_0dc01622-8e3d-4438-9cc9-b736676f31fd.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\smart-scaled3006202413321237-22320689-1742982406582-1742982407019616324617_0c80e69a-2e55-4add-a34f-9a4baa309bc2.webp",
+      "PackagePath": "staticwebassets\\images\\smart-scaled3006202413321237-22320689-1742982406582-1742982407019616324617_0c80e69a-2e55-4add-a34f-9a4baa309bc2.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\sontuong.jpg",
+      "PackagePath": "staticwebassets\\images\\sontuong.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\suanuoc.webp",
+      "PackagePath": "staticwebassets\\images\\suanuoc.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\the manor_0da89c87-7576-4315-84fd-383493723fd6.webp",
+      "PackagePath": "staticwebassets\\images\\the manor_0da89c87-7576-4315-84fd-383493723fd6.webp"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\the-river-thu-thiem-1-6903_11de9de9-958d-461e-ab10-79693cc1393c.jpg",
+      "PackagePath": "staticwebassets\\images\\the-river-thu-thiem-1-6903_11de9de9-958d-461e-ab10-79693cc1393c.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\vesinh.jpg",
+      "PackagePath": "staticwebassets\\images\\vesinh.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Độc quyền Xanh SM_f76304db-b28d-4528-8b78-ad99c6ba4b92.jpg",
+      "PackagePath": "staticwebassets\\images\\Độc quyền Xanh SM_f76304db-b28d-4528-8b78-ad99c6ba4b92.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\images\\Độc quyền Xanh SM_ffca709b-c2c1-4fba-b3b7-d8efeb567b06.jpg",
+      "PackagePath": "staticwebassets\\images\\Độc quyền Xanh SM_ffca709b-c2c1-4fba-b3b7-d8efeb567b06.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\uploads\\phananh\\0bf0c1d7-fb99-4912-98e4-e034336e58ea_08fdcff3-d072-4141-a604-3b51b995b604.jpg",
+      "PackagePath": "staticwebassets\\uploads\\phananh\\0bf0c1d7-fb99-4912-98e4-e034336e58ea_08fdcff3-d072-4141-a604-3b51b995b604.jpg"
+    },
+    {
+      "Id": "D:\\lemin\\Documents\\APT\\APT\\APT\\APT\\wwwroot\\uploads\\phananh\\1a84f27f-f3f8-47b5-a3db-028946da5501_6f574599-04e2-442f-bf89-7fe9a0e82a17.webp",
+      "PackagePath": "staticwebassets\\uploads\\phananh\\1a84f27f-f3f8-47b5-a3db-028946da5501_6f574599-04e2-442f-bf89-7fe9a0e82a17.webp"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.APT.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.APT.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.APT.props",
+      "PackagePath": "build\\APT.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.APT.props",
+      "PackagePath": "buildMultiTargeting\\APT.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.APT.props",
+      "PackagePath": "buildTransitive\\APT.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
